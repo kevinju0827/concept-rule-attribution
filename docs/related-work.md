@@ -4,9 +4,11 @@
 
 每個里程碑結束時檢查一次新發表的研究，更新本文件。最後檢查：2026-10-02。
 
+書目資訊以一手來源為準：論文本身、出版者的頁面，或作者的官方程式碼庫。只讀過摘要、尚未讀過全文的文獻，在內文中標註；部落格、新聞稿與第三方的測試報告不作為引用來源。
+
 ## 表示空間中的世界模型
 
-只在表示空間預測、不重建畫面的路線，起點是 LeCun（2022）提出的聯合嵌入預測架構。V-JEPA 2（Assran 等，2025）在影片上大規模預訓練後用於機器人規劃；LeJEPA（Balestriero 與 LeCun，2025）以一個把表示推向等向高斯分布的約束取代各種防崩塌技巧；LeWorldModel（Maes 等，2026）把這個約束用於從像素端到端訓練的世界模型，以約 1500 萬參數在單張 GPU 上訓練。
+只在表示空間預測、不重建畫面的路線，起點是 LeCun（2022）提出的聯合嵌入預測架構，之後也被用於語言模型的訓練目標（Huang、LeCun 與 Balestriero，2025）。V-JEPA 2（Assran 等，2025）在影片上大規模預訓練後用於機器人規劃；LeJEPA（Balestriero 與 LeCun，2025）以一個把表示推向等向高斯分布的約束取代各種防崩塌技巧；LeWorldModel（Maes 等，2026）把這個約束用於從像素端到端訓練的世界模型，以約 1500 萬參數在單張 GPU 上訓練。
 
 對照的路線是 Dreamer 系列（Hafner 等，2025；Hafner、Yan 與 Lillicrap，2025），它的表示是機率分布，並同時重建畫面。
 
@@ -19,7 +21,7 @@ C-SWM（Kipf、van der Pol 與 Welling，2020）以對比學習訓練物件分�
 
 這是與本專案的神經網路歸因最接近的研究。
 
-DWM（Zhang、Du、Zhang 與 Wang，2026，未經同儕審查的預印本）把「世界效果」定義為：在相同狀態與歷史下，若把當前動作換成空動作仍會發生的變化；其餘歸為動作效果。它在表示空間世界模型上加一個學習世界效果的輸出，以正交約束與原本的預測耦合，並在 PushT、Reacher、TwoRoom 加入環境自身動態的變體上提升規劃成功率。
+DWM（Zhang、Du、Zhang 與 Wang，2026，未經同儕審查的預印本；以下依摘要整理，全文尚未查閱）把「世界效果」定義為：在相同狀態與歷史下，若把當前動作換成空動作仍會發生的變化；其餘歸為動作效果。它在表示空間世界模型上加一個學習世界效果的輸出，以正交約束與原本的預測耦合，並在 PushT、Reacher、TwoRoom 加入環境自身動態的變體上提升規劃成功率。
 
 CAI（Seitzer、Schölkopf 與 Martius，2021）以「給定狀態下，動作與下一步狀態之間的條件互資訊」衡量代理在當下對環境的因果影響，用於改善探索，並以模擬器提供的標記檢驗偵測能力。
 
@@ -52,7 +54,7 @@ CAI（Seitzer、Schölkopf 與 Martius，2021）以「給定狀態下，動作�
 
 ## 表示中的世界狀態：讀取與介入
 
-在 Othello 棋局上訓練的序列模型中，讀取器能讀出棋盤狀態，沿讀取器的方向修改內部表示會改變模型的預測（Li 等，2023）；之後發現，以「目前玩家的棋子與對手的棋子」為目標時，棋盤是線性表示的，以絕對顏色為目標則否（Nanda、Lee 與 Wattenberg，2023）。Zhang（2026）以類似方法讀取強化學習中學出的環境模擬器。
+在 Othello 棋局上訓練的序列模型中，讀取器能讀出棋盤狀態，沿讀取器的方向修改內部表示會改變模型的預測（Li 等，2023）；之後發現，以「目前玩家的棋子與對手的棋子」為目標時，棋盤是線性表示的，以絕對顏色為目標則否（Nanda、Lee 與 Wattenberg，2023）。Zhang（2026，研討會論文，依摘要整理）以類似方法讀取強化學習中學出的環境模擬器，發現物體位置與分數等變數大致可以線性讀出。
 
 讀取方法本身的問題：Hewitt 與 Liang（2019）提出以對照任務衡量讀取器的選擇性；Voita 與 Titov（2020）以最小描述長度衡量讀取；Belinkov（2022）整理了讀取的限制；Elazar 等（2021）以移除資訊後的行為變化檢驗表示是否被使用。
 
@@ -120,7 +122,7 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Chevalier-Boisvert, M. et al. (2023). Minigrid & Miniworld: Modular & Customizable Reinforcement Learning Environments for Goal-Oriented Tasks. NeurIPS Datasets and Benchmarks Track.
 - Choi, J. et al. (2019). Contingency-Aware Exploration in Reinforcement Learning. ICLR.
 - Colas, C., Sigaud, O. and Oudeyer, P.-Y. (2018). How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments. arXiv:1806.08295.
-- Courtis, D., Li, W. and Sanner, S. (2026). OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration. arXiv:2607.01531. 未經同儕審查的預印本。
+- Courtis, D., Li, W. and Sanner, S. (2026). OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration for ARC-AGI-3. arXiv:2607.01531. 未經同儕審查的預印本。
 - Cropper, A. and Morel, R. (2021). Learning programs by learning from failures. Machine Learning, 110.
 - Das, R., Tenenbaum, J. B., Solar-Lezama, A. and Tavares, Z. (2023). Combining Functional and Automata Synthesis to Discover Causal Reactive Programs. Proceedings of the ACM on Programming Languages, 7(POPL).
 - Diuk, C., Cohen, A. and Littman, M. L. (2008). An Object-Oriented Representation for Efficient Reinforcement Learning. ICML.
@@ -139,6 +141,7 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D. and Meger, D. (2018). Deep Reinforcement Learning that Matters. AAAI.
 - Hewitt, J. and Liang, P. (2019). Designing and Interpreting Probes with Control Tasks. EMNLP-IJCNLP.
 - Higgins, I. et al. (2018). Towards a Definition of Disentangled Representations. arXiv:1812.02230.
+- Huang, H., LeCun, Y. and Balestriero, R. (2025). LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures. arXiv:2509.14252.
 - Inoue, K., Ribeiro, T. and Sakama, C. (2014). Learning from interpretation transition. Machine Learning, 94.
 - Kansky, K. et al. (2017). Schema Networks: Zero-shot Transfer with a Generative Causal Model of Intuitive Physics. ICML.
 - Khan et al. (2026). One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration. ICLR. arXiv:2510.12088.

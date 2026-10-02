@@ -115,8 +115,9 @@
 - Maes, L. et al. (2026). LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels. arXiv:2603.19312. 官方程式碼：https://github.com/lucas-maes/le-wm
 - Hao, S. et al. (2024). Training Large Language Models to Reason in a Continuous Latent Space. arXiv:2412.06769.
 - Chen, D. et al. (2025). VL-JEPA: Joint Embedding Predictive Architecture for Vision-language. arXiv:2512.10942.
+- Huang, H., LeCun, Y. and Balestriero, R. (2025). LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures. arXiv:2509.14252.
 - Khan et al. (2026). One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration. ICLR. arXiv:2510.12088.
-- Courtis, D., Li, W. and Sanner, S. (2026). OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration. arXiv:2607.01531. 未經同儕審查的預印本。
+- Courtis, D., Li, W. and Sanner, S. (2026). OPINE-World: Programmatic World Modeling with Ontology-error-Prioritized Interactive Exploration for ARC-AGI-3. arXiv:2607.01531. 未經同儕審查的預印本。
 - Seitzer, M., Schölkopf, B. and Martius, G. (2021). Causal Influence Detection for Improving Efficiency in Reinforcement Learning. NeurIPS.
 - Zhang, Y.-G., Du, T., Zhang, Q. and Wang, Y. (2026). DWM: Separating World Effects from Actions in Latent World Models. arXiv:2607.18715. 未經同儕審查的預印本。
 - Farama Foundation. Minigrid. https://minigrid.farama.org/

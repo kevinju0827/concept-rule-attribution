@@ -108,7 +108,7 @@ M1 與 M2 可以並行；M3 可以與 M4 並行；M7 與 M8 可以並行。資�
 
 **進入條件。** M4 的 1.1、1.2 與 `front_type` 介入檢查通過。
 
-**工作。** 依 [attribution.md](../design/attribution.md) 實作神經網路歸因、基準、分層與指標；試驗；門檻鎖定與標籤 `prereg/attribution`；確認；報告。
+**工作。** 閱讀 DWM 的全文，確認 [related-work.md](../related-work.md) 中依摘要整理的描述，並判斷是否把它列為探索性的比較對象。依 [attribution.md](../design/attribution.md) 實作神經網路歸因、基準、分層與指標；試驗；門檻鎖定與標籤 `prereg/attribution`；確認；報告。
 
 **完成條件。** 歸因檢驗報告完成。
 
