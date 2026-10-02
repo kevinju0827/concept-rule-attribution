@@ -23,15 +23,15 @@ concept-rule-attribution 的設計規格、決策紀錄、計畫與參考資料�
 
 | 文件 | 範圍 |
 | --- | --- |
-| [environment.md](design/environment.md) | 客製環境的物體、規則表、動作空間、可識別性、標準答案與反事實、環境必須滿足的性質 |
+| [environment.md](design/environment.md) | 客製環境的物體、規則表、機制與環境變體、帶雜訊的變體、可識別性、標準答案與反事實、環境必須滿足的性質 |
 | [data.md](design/data.md) | 行為策略、覆蓋率檢查、資料分割、每一步保存的內容、儲存格式 |
 | [world-model.md](design/world-model.md) | 編碼器、信念模組與轉移頭的必要條件，差異量，診斷 |
 | [readout.md](design/readout.md) | 讀取目標、對照、單張畫面上限、指標、介入檢查，以及把表示讀成狀態 |
-| [rule-extraction.md](design/rule-extraction.md) | 從讀出的狀態抽出規則的流程、規則形式、搜尋方法、接受與判定 |
+| [rule-extraction.md](design/rule-extraction.md) | 從讀出的狀態抽出規則的流程、規則形式、搜尋方法、描述長度、保真度–複雜度曲線與判定 |
 | [attribution.md](design/attribution.md) | 歸因的定義、三種估計與基準、分層、指標、規則解釋不了的變化 |
 | [evaluation.md](design/evaluation.md) | 各階段的方法、通過條件與相依關係 |
 | [comparisons.md](design/comparisons.md) | 第四階段比較的各組設定，以及每一組排除了哪一種解釋 |
-| [statistics.md](design/statistics.md) | 種子、區間估計、多重比較、門檻鎖定程序與報告格式 |
+| [statistics.md](design/statistics.md) | 種子、區間估計、校準、多重比較、門檻鎖定程序與報告格式 |
 | [architecture.md](design/architecture.md) | 程式碼的目錄、模組界線、執行紀錄、測試與釋出 |
 
 ## 決策紀錄
