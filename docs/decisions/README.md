@@ -10,15 +10,18 @@
 | [0002](0002-minigrid-as-environment.md) | 以 MiniGrid 作為環境 | 已接受 |
 | [0003](0003-lewm-as-world-model-starting-point.md) | 世界模型以 LeWorldModel 為起點 | 提議中 |
 | [0004](0004-rule-simulation-as-second-attribution-estimate.md) | 以規則模擬作為第二個歸因估計，規則解釋不了的變化不直接歸給代理 | 已接受 |
-| [0005](0005-deterministic-custom-environment.md) | 客製環境採用確定性動態、五個動作，且每個隱藏變數都必須可由歷史識別 | 已接受 |
+| [0005](0005-deterministic-custom-environment.md) | 客製環境採用確定性動態、五個動作，且每個隱藏變數都必須可由歷史識別 | 被 0016 取代 |
 | [0006](0006-noop-semantics-and-contrastive-attribution.md) | 「什麼都不做」定義為代理不施加任何效果，歸因以它為對照並區分時間範圍與特權 | 已接受 |
 | [0007](0007-frame-and-history-representations.md) | 區分單張畫面表示與歷史條件表示，隱藏變數只在後者上讀取 | 已接受 |
 | [0008](0008-difference-measure.md) | 差異量採用以一步變化量正規化的歐氏距離，確認性指標只使用排序 | 已接受 |
 | [0009](0009-probe-targets-and-controls.md) | 讀取目標改為逐格與相對代理的形式，對照改為基準表示與描述長度 | 已接受 |
 | [0010](0010-statistics-and-threshold-locking.md) | 確認性分析至少五組種子，門檻以決策紀錄與 git 標籤鎖定 | 已接受 |
 | [0011](0011-stage-dependency-graph.md) | 階段依相依關係推進，神經網路歸因的檢驗不等待規則抽取 | 已接受 |
-| [0012](0012-noise-tolerant-rule-search.md) | 規則搜尋容忍讀取誤差，規則是否正確以真實狀態判定 | 已接受 |
-| [0013](0013-generalization-axes-and-capacity-controls.md) | 推廣測試固定畫面大小，容量對照改為同閘控的雙網路與加倍參數的單一網路 | 已接受 |
+| [0012](0012-noise-tolerant-rule-search.md) | 規則搜尋容忍讀取誤差，規則是否正確以真實狀態判定 | 被 0014 取代 |
+| [0013](0013-generalization-axes-and-capacity-controls.md) | 推廣測試固定畫面大小，容量對照改為同閘控的雙網路與加倍參數的單一網路 | 被 0015 取代 |
+| [0014](0014-structural-correctness-and-mdl-rule-selection.md) | 規則以結構正確與保真度–複雜度評估，以描述長度選擇 | 已接受 |
+| [0015](0015-generalization-tests-with-mechanism-composition.md) | 推廣測試加入機制組合，畫面大小固定，容量對照分成兩組 | 已接受 |
+| [0016](0016-environment-mechanisms-and-stochastic-variant.md) | 客製環境以確定性版本為主，規則依機制分組可關閉，並在第四階段加入帶雜訊的變體 | 已接受 |
 
 新增或改變狀態時，同步更新本表。
 
