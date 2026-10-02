@@ -19,7 +19,8 @@
 - 編碼器為小型 Vision Transformer，方塊邊長 14 像素，預設輸入 224×224；取分類標記的輸出，經一個含批次正規化的多層感知器投影成 192 維。
 - 預測器為因果遮罩的 Transformer，6 層，位置編碼為可學習的參數，長度等於歷史長度，預設 3 張畫面；動作經一個小型嵌入網路後，以調制的方式進入每一層。
 - 損失為下一步表示的均方誤差，加上權重 0.09 的等向高斯約束。預設以 bf16 精度、每批 128 個樣本訓練。
-- 資料為 HDF5 格式，欄位包括畫面、動作與本體感覺。
+- 資料欄位包括畫面、動作與本體感覺。說明文件寫的是 HDF5 格式；設定檔中 TwoRoom、Reacher、Cube 使用 HDF5，PushT 在該提交中改為 Lance 格式。
+- 訓練結束後以狀態字典加設定檔的形式存檔；評估時以相對於 `$STABLEWM_HOME/checkpoints/` 的路徑或 Hugging Face 上的模型名稱載入（stable-worldmodel 0.1.1）。
 - 安裝說明以 uv 建立 Python 3.10 的環境，並依賴 stable-worldmodel 與 stable-pretraining。
 
 ## 決策

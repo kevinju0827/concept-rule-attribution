@@ -83,7 +83,7 @@
 
 ## 儲存格式
 
-HDF5，以 `h5py` 讀寫。理由：可依索引隨機讀取，不必整份載入記憶體；LeWorldModel 與 Farama Foundation 的離線資料標準 Minari 都採用 HDF5，日後轉換的成本低。
+HDF5，以 `h5py` 讀寫。理由：可依索引隨機讀取，不必整份載入記憶體；Farama Foundation 的離線資料標準 Minari 採用 HDF5，LeWorldModel 的官方資料也多為 HDF5（PushT 已改用 Lance），日後轉換的成本低。
 
 - 每個分割分成多個檔案，每檔不超過 2 GB。
 - 資料集沿時間軸分塊，每塊為一個回合，並壓縮。壓縮方式在產生正式資料前以讀取速度與檔案大小比較後選定。
