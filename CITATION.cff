@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "若在研究中使用本專案，請依以下資訊引用。"
+title: "concept-rule-attribution"
+abstract: "在規則完全已知的格子世界中，檢驗從畫面學出的表示空間能否抽出精確、可驗證的規則，以及代理能否估計環境變化中有多少是自己造成的。"
+type: software
+authors:
+  - alias: kevinju
+license: MIT
+repository-code: "https://github.com/kevinju0827/concept-rule-attribution"
+keywords:
+  - world models
+  - joint-embedding predictive architecture
+  - MiniGrid
+  - rule extraction
+  - counterfactual attribution
+  - probing
