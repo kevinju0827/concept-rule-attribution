@@ -112,6 +112,15 @@
 | 同閘控的雙網路 | gated dual network | | 推廣測試的對照設定 4a |
 | 組合代價 | composition cost | | 看過機制組合的模型與只看過部分機制的模型，在相同測試資料上的表現之差 |
 | 停止規則 | stopping rule | | 未通過的檢驗擋住依賴它的檢驗，不以擴大規模繞過 |
+| 校準 | calibration | | 機率是否可信：說 0.8 時是否約有八成正確 |
+| 適當評分規則 | proper scoring rule | | 只有在預測機率等於真實機率時期望分數才最好的評分方式，例如負對數似然與 Brier 分數 |
+| 負對數似然 | negative log-likelihood | `nll` | 真實結果的平均負對數機率 |
+| Brier 分數 | Brier score | `brier` | 預測機率向量與真實結果的獨熱向量之間的平均平方差 |
+| 可靠度圖 | reliability diagram | | 依機率分箱，每箱的平均機率對平均正確率 |
+| 期望校準誤差 | expected calibration error | `ece` | 各箱平均機率與平均正確率之差的加權平均；分箱估計會低估 |
+| 機率誤差 | probability error | | 預測機率與環境真實機率之間的平均絕對差 |
+| 風險–涵蓋率曲線 | risk–coverage curve | | 只在信心高於門檻時給出答案，錯誤率隨涵蓋率的變化 |
+| 信心閘控 | confidence gating | | 讀取信心高於門檻時才使用規則的結合方式，探索性的設定 3′ |
 
 ## 已停用的術語
 

@@ -86,6 +86,13 @@ WorldCoder（Tang、Key 與 Ellis，2024）、OneLife（Khan 等，2026）、OPI
 
 **差異**：在這些方法中，連續的觀測與精確的規則之間由語言模型以文字轉譯。本專案要檢驗的，正是不經過語言的橋是否存在，因此刻意不使用語言模型。
 
+## 校準與選擇性預測
+
+現代神經網路的機率常常過度自信（Guo、Pleiss、Sun 與 Weinberger，2017）；輸入分布偏移時，校準通常隨之變差（Ovadia 等，2019）。期望校準誤差以分箱計算（Naeini、Cooper 與 Hauskrecht，2015），但分箱估計會低估真正的校準誤差（Kumar、Liang 與 Ma，2019）。負對數似然與 Brier 分數（Brier，1950）是嚴格適當的評分規則（Gneiting 與 Raftery，2007），不需要分箱。允許模型在信心不足時不作答，並以風險–涵蓋率曲線評估，是選擇性預測的做法（Geifman 與 El-Yaniv，2017）。
+
+**借用**：以適當評分規則為主、分箱指標為輔的校準量測；在分布偏移下量測校準；選擇性預測的評估方式。
+**差異**：一般的校準研究只能從結果反推機率是否可信；本專案的帶雜訊變體知道每個結果的真實機率，可以直接比較。
+
 ## 實際因果
 
 Halpern 與 Pearl（2005）、Halpern（2016）以結構因果模型定義「某事是某結果的原因」；Pearl（2009）是反事實推論的標準參考。
@@ -119,6 +126,7 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Battaglia, P. W., Hamrick, J. B. and Tenenbaum, J. B. (2013). Simulation as an engine of physical scene understanding. PNAS, 110(45).
 - Belinkov, Y. (2022). Probing Classifiers: Promises, Shortcomings, and Advances. Computational Linguistics, 48(1).
 - Blakemore, S.-J., Wolpert, D. M. and Frith, C. D. (1998). Central cancellation of self-produced tickle sensation. Nature Neuroscience, 1(7).
+- Brier, G. W. (1950). Verification of forecasts expressed in terms of probability. Monthly Weather Review, 78(1).
 - Chevalier-Boisvert, M. et al. (2023). Minigrid & Miniworld: Modular & Customizable Reinforcement Learning Environments for Goal-Oriented Tasks. NeurIPS Datasets and Benchmarks Track.
 - Choi, J. et al. (2019). Contingency-Aware Exploration in Reinforcement Learning. ICLR.
 - Colas, C., Sigaud, O. and Oudeyer, P.-Y. (2018). How Many Random Seeds? Statistical Power Analysis in Deep Reinforcement Learning Experiments. arXiv:1806.08295.
@@ -131,7 +139,10 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Frank, M. C., Everett, D. L., Fedorenko, E. and Gibson, E. (2008). Number as a cognitive technology: Evidence from Pirahã language and cognition. Cognition, 108(3).
 - Frith, C. D., Blakemore, S.-J. and Wolpert, D. M. (2000). Abnormalities in the awareness and control of action. Philosophical Transactions of the Royal Society B, 355.
 - Gebru, T. et al. (2021). Datasheets for Datasets. Communications of the ACM, 64(12).
+- Geifman, Y. and El-Yaniv, R. (2017). Selective Classification for Deep Neural Networks. NeurIPS.
+- Gneiting, T. and Raftery, A. E. (2007). Strictly Proper Scoring Rules, Prediction, and Estimation. Journal of the American Statistical Association, 102(477).
 - Grünwald, P. D. (2007). The Minimum Description Length Principle. MIT Press.
+- Guo, C., Pleiss, G., Sun, Y. and Weinberger, K. Q. (2017). On Calibration of Modern Neural Networks. ICML.
 - Hafner, D. (2022). Benchmarking the Spectrum of Agent Capabilities. ICLR.
 - Hafner, D., Pasukonis, J., Ba, J. and Lillicrap, T. (2025). Mastering diverse control tasks through world models. Nature, 640.
 - Hafner, D., Yan, W. and Lillicrap, T. (2025). Training Agents Inside of Scalable World Models. arXiv:2509.24527.
@@ -147,6 +158,7 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Khan et al. (2026). One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration. ICLR. arXiv:2510.12088.
 - Kipf, T., van der Pol, E. and Welling, M. (2020). Contrastive Learning of Structured World Models. ICLR.
 - Klyubin, A. S., Polani, D. and Nehaniv, C. L. (2005). Empowerment: A Universal Agent-Centric Measure of Control. IEEE Congress on Evolutionary Computation.
+- Kumar, A., Liang, P. and Ma, T. (2019). Verified Uncertainty Calibration. NeurIPS.
 - Lake, B. M., Ullman, T. D., Tenenbaum, J. B. and Gershman, S. J. (2017). Building machines that learn and think like people. Behavioral and Brain Sciences, 40.
 - LeCun, Y. (2022). A Path Towards Autonomous Machine Intelligence. OpenReview.
 - Li, K., Hopkins, A. K., Bau, D., Viégas, F., Pfister, H. and Wattenberg, M. (2023). Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task. ICLR.
@@ -154,9 +166,11 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Maes, L. et al. (2026). LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels. arXiv:2603.19312.
 - McCarthy, J. and Hayes, P. J. (1969). Some philosophical problems from the standpoint of artificial intelligence. Machine Intelligence, 4.
 - Mitchell, M. et al. (2019). Model Cards for Model Reporting. FAT*.
+- Naeini, M. P., Cooper, G. F. and Hauskrecht, M. (2015). Obtaining Well Calibrated Probabilities Using Bayesian Binning. AAAI.
 - Nanda, N., Lee, A. and Wattenberg, M. (2023). Emergent Linear Representations in World Models of Self-Supervised Sequence Models. BlackboxNLP.
 - Nosek, B. A., Ebersole, C. R., DeHaven, A. C. and Mellor, D. T. (2018). The preregistration revolution. PNAS, 115(11).
 - Nygard, M. (2011). Documenting Architecture Decisions.
+- Ovadia, Y. et al. (2019). Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift. NeurIPS.
 - Pasula, H. M., Zettlemoyer, L. S. and Kaelbling, L. P. (2007). Learning Symbolic Models of Stochastic Domains. Journal of Artificial Intelligence Research, 29.
 - Pearl, J. (2009). Causality: Models, Reasoning, and Inference (2nd ed.). Cambridge University Press.
 - Pineau, J. et al. (2021). Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program). JMLR, 22.

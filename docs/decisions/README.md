@@ -22,6 +22,7 @@
 | [0014](0014-structural-correctness-and-mdl-rule-selection.md) | 規則以結構正確與保真度–複雜度評估，以描述長度選擇 | 已接受 |
 | [0015](0015-generalization-tests-with-mechanism-composition.md) | 推廣測試加入機制組合，畫面大小固定，容量對照分成兩組 | 已接受 |
 | [0016](0016-environment-mechanisms-and-stochastic-variant.md) | 客製環境以確定性版本為主，規則依機制分組可關閉，並在第四階段加入帶雜訊的變體 | 已接受 |
+| [0017](0017-calibration-of-probability-outputs.md) | 所有機率輸出都量測校準，以適當評分規則為主，不作為通過條件 | 已接受 |
 
 新增或改變狀態時，同步更新本表。
 
