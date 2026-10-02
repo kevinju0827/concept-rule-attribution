@@ -13,7 +13,7 @@
 C-SWM（Kipf、van der Pol 與 Welling，2020）以對比學習訓練物件分解的表示空間世界模型，並在格子世界中以「預測的表示在參考集合中排第幾」評估預測品質，不需要還原畫面。
 
 **借用**：防崩塌的約束、只在表示空間預測、以排名評估預測品質。
-**差異**：這些研究關心規劃與控制的表現；本專案關心學出的表示能否支撐精確規則與自身影響的估計，並以環境的標準答案逐項檢驗。
+**差異**：這些研究關心規劃與控制的表現；本專案關心學出的表示能否支撐結構正確、可組合的規則與自身影響的估計，並以環境的標準答案逐項檢驗。
 
 ## 在世界模型中分離環境效果與動作效果
 
@@ -38,6 +38,17 @@ CAI（Seitzer、Schölkopf 與 Martius，2021）以「給定狀態下，動作�
 
 **借用**：「預測自己動作的後果，再與另一個參考比較」的結構。
 **差異**：本專案的參考是「什麼都不做」時的預測，而不是實際的感覺；並且刻意不把歸因作為訓練訊號，以免代理被引導去盡量影響世界。
+
+## 精確性、組合性與生物的近似模型
+
+生物的預測並不精確。人對物理場景的直覺判斷，可以由帶雜訊、近似的模擬解釋（Battaglia、Hamrick 與 Tenenbaum，2013）；人的認知可以理解為在有限的計算資源下取捨準確度（Lieder 與 Griffiths，2020）。另一方面，嬰兒對物體的預期是類別式、結構正確的，例如物體恆存與不可穿透（Spelke 與 Kinzler，2007）；而精確的數量概念要靠數詞這類符號工具（Frank、Everett、Fedorenko 與 Gibson，2008）。Lake 等（2017）主張，像人一樣學習的機器需要因果模型與組合性，而不只是模式辨識。
+
+以獨立規則描述世界的困難早已被指出：要寫明什麼不會改變的框架問題、間接效果的衍生問題、條件永遠列不完的限定問題（McCarthy 與 Hayes，1969）。因果表示學習以「獨立的因果機制」與「分布改變時只有少數機制改變」作為可組合的基礎（Schölkopf 等，2021）；物件導向世界模型把組合推廣形式化，並以只看過部分物體組合的訓練、測試新組合（Zhao、Kong、Walters 與 Wong，2022）。
+
+以描述長度選擇模型，是在準確度與簡潔之間取捨的標準方法（Rissanen，1978；Grünwald，2007）。
+
+**借用**：區分數值的精確與結構的正確；以描述長度取捨保真度與複雜度；以「只看過部分機制、測試新組合」檢驗可組合性。
+**差異**：本專案的機制組合在環境層級定義，每個機制可以整組關閉而不改變其餘規則，因此能乾淨地分開「規則本身」與「規則如何疊加」。
 
 ## 表示中的世界狀態：讀取與介入
 
@@ -103,6 +114,7 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Agarwal, R., Schwarzer, M., Castro, P. S., Courville, A. and Bellemare, M. G. (2021). Deep Reinforcement Learning at the Edge of the Statistical Precipice. NeurIPS.
 - Assran, M. et al. (2025). V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. arXiv:2506.09985.
 - Balestriero, R. and LeCun, Y. (2025). LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics. arXiv:2511.08544.
+- Battaglia, P. W., Hamrick, J. B. and Tenenbaum, J. B. (2013). Simulation as an engine of physical scene understanding. PNAS, 110(45).
 - Belinkov, Y. (2022). Probing Classifiers: Promises, Shortcomings, and Advances. Computational Linguistics, 48(1).
 - Blakemore, S.-J., Wolpert, D. M. and Frith, C. D. (1998). Central cancellation of self-produced tickle sensation. Nature Neuroscience, 1(7).
 - Chevalier-Boisvert, M. et al. (2023). Minigrid & Miniworld: Modular & Customizable Reinforcement Learning Environments for Goal-Oriented Tasks. NeurIPS Datasets and Benchmarks Track.
@@ -114,12 +126,14 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Diuk, C., Cohen, A. and Littman, M. L. (2008). An Object-Oriented Representation for Efficient Reinforcement Learning. ICML.
 - Elazar, Y., Ravfogel, S., Jacovi, A. and Goldberg, Y. (2021). Amnesic Probing: Behavioral Explanation with Amnesic Counterfactuals. Transactions of the ACL, 9.
 - Evans, R., Hernández-Orallo, J., Welbl, J., Kohli, P. and Sergot, M. (2021). Making sense of sensory input. Artificial Intelligence, 293.
+- Frank, M. C., Everett, D. L., Fedorenko, E. and Gibson, E. (2008). Number as a cognitive technology: Evidence from Pirahã language and cognition. Cognition, 108(3).
 - Frith, C. D., Blakemore, S.-J. and Wolpert, D. M. (2000). Abnormalities in the awareness and control of action. Philosophical Transactions of the Royal Society B, 355.
 - Gebru, T. et al. (2021). Datasheets for Datasets. Communications of the ACM, 64(12).
-- Haggard, P. (2017). Sense of agency in the human brain. Nature Reviews Neuroscience, 18.
+- Grünwald, P. D. (2007). The Minimum Description Length Principle. MIT Press.
 - Hafner, D. (2022). Benchmarking the Spectrum of Agent Capabilities. ICLR.
 - Hafner, D., Pasukonis, J., Ba, J. and Lillicrap, T. (2025). Mastering diverse control tasks through world models. Nature, 640.
 - Hafner, D., Yan, W. and Lillicrap, T. (2025). Training Agents Inside of Scalable World Models. arXiv:2509.24527.
+- Haggard, P. (2017). Sense of agency in the human brain. Nature Reviews Neuroscience, 18.
 - Halpern, J. Y. (2016). Actual Causality. MIT Press.
 - Halpern, J. Y. and Pearl, J. (2005). Causes and Explanations: A Structural-Model Approach. Part I: Causes. The British Journal for the Philosophy of Science, 56(4).
 - Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D. and Meger, D. (2018). Deep Reinforcement Learning that Matters. AAAI.
@@ -130,9 +144,12 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Khan et al. (2026). One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration. ICLR. arXiv:2510.12088.
 - Kipf, T., van der Pol, E. and Welling, M. (2020). Contrastive Learning of Structured World Models. ICLR.
 - Klyubin, A. S., Polani, D. and Nehaniv, C. L. (2005). Empowerment: A Universal Agent-Centric Measure of Control. IEEE Congress on Evolutionary Computation.
+- Lake, B. M., Ullman, T. D., Tenenbaum, J. B. and Gershman, S. J. (2017). Building machines that learn and think like people. Behavioral and Brain Sciences, 40.
 - LeCun, Y. (2022). A Path Towards Autonomous Machine Intelligence. OpenReview.
 - Li, K., Hopkins, A. K., Bau, D., Viégas, F., Pfister, H. and Wattenberg, M. (2023). Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task. ICLR.
+- Lieder, F. and Griffiths, T. L. (2020). Resource-rational analysis: Understanding human cognition as the optimal use of limited computational resources. Behavioral and Brain Sciences, 43.
 - Maes, L. et al. (2026). LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels. arXiv:2603.19312.
+- McCarthy, J. and Hayes, P. J. (1969). Some philosophical problems from the standpoint of artificial intelligence. Machine Intelligence, 4.
 - Mitchell, M. et al. (2019). Model Cards for Model Reporting. FAT*.
 - Nanda, N., Lee, A. and Wattenberg, M. (2023). Emergent Linear Representations in World Models of Self-Supervised Sequence Models. BlackboxNLP.
 - Nosek, B. A., Ebersole, C. R., DeHaven, A. C. and Mellor, D. T. (2018). The preregistration revolution. PNAS, 115(11).
@@ -141,8 +158,11 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - Pearl, J. (2009). Causality: Models, Reasoning, and Inference (2nd ed.). Cambridge University Press.
 - Pineau, J. et al. (2021). Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program). JMLR, 22.
 - Quessard, R., Barrett, T. D. and Clements, W. R. (2020). Learning Disentangled Representations and Group Structure of Dynamical Environments. NeurIPS.
+- Rissanen, J. (1978). Modeling by shortest data description. Automatica, 14(5).
 - Roy, O. and Vetterli, M. (2007). The effective rank: A measure of effective dimensionality. EUSIPCO.
+- Schölkopf, B., Locatello, F., Bauer, S., Ke, N. R., Kalchbrenner, N., Goyal, A. and Bengio, Y. (2021). Toward Causal Representation Learning. Proceedings of the IEEE, 109(5).
 - Seitzer, M., Schölkopf, B. and Martius, G. (2021). Causal Influence Detection for Improving Efficiency in Reinforcement Learning. NeurIPS.
+- Spelke, E. S. and Kinzler, K. D. (2007). Core knowledge. Developmental Science, 10(1).
 - Tang, H., Key, D. and Ellis, K. (2024). WorldCoder, a Model-Based LLM Agent: Building World Models by Writing Code and Interacting with the Environment. NeurIPS.
 - Thomas, V. et al. (2017). Independently Controllable Factors. arXiv:1708.01289.
 - Tsividis, P. A. et al. (2021). Human-Level Reinforcement Learning through Theory-Based Modeling, Exploration, and Planning. arXiv:2107.12544.
@@ -151,6 +171,7 @@ MiniGrid（Chevalier-Boisvert 等，2023）；後續檢驗預定使用的 Crafte
 - von Holst, E. and Mittelstaedt, H. (1950). Das Reafferenzprinzip. Naturwissenschaften, 37.
 - Zhang, X. (2026). What Do World Models Learn in RL? Probing Latent Representations in Learned Environment Simulators. ICLR 2026 Workshop on World Models. arXiv:2603.21546.
 - Zhang, Y.-G., Du, T., Zhang, Q. and Wang, Y. (2026). DWM: Separating World Effects from Actions in Latent World Models. arXiv:2607.18715. 未經同儕審查的預印本。
+- Zhao, L., Kong, L., Walters, R. and Wong, L. L. S. (2022). Toward Compositional Generalization in Object-Oriented World Modeling. ICML.
 
 ### 實務指南
 
