@@ -25,6 +25,7 @@
 | [0017](0017-calibration-of-probability-outputs.md) | 所有機率輸出都量測校準，以適當評分規則為主，不作為通過條件 | 已接受 |
 | [0018](0018-intuition-candidates-and-rule-evaluation-hypothesis.md) | 以「直覺提出候選、規則評估」作為工作假設，本專案只檢驗 AI 一側 | 已接受 |
 | [0019](0019-goal-self-built-evaluator-for-intuitive-candidates.md) | 專案目標改為讓 AI 自己整理世界的模擬或規則來評估直覺選項，概念、規則與歸因改為支撐問題 | 已接受 |
+| [0020](0020-scope-of-intuitive-candidates.md) | 直覺選項分三層依序檢驗：一步預測、多步預測、以世界模型規劃選動作 | 已接受 |
 
 新增或改變狀態時，同步更新本表。
 
